@@ -1,0 +1,22 @@
+{
+  "name": "bird-bingus-box",
+  "version": "1.0.0",
+  "description": "bird",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/birdbrained/bird-bingus-box.git"
+  },
+  "author": "Matt Kataryniak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/birdbrained/bird-bingus-box/issues"
+  },
+  "homepage": "https://github.com/birdbrained/bird-bingus-box#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
