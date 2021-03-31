@@ -1,7 +1,25 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
+const fs = require('fs');
 const client = new Discord.Client();
 const prefix = "?";
+
+function createFile(filename)
+{
+  fs.open(filename, 'r', function(err, fd)
+  {
+    if (err) {
+      fs.writeFile(filename, '{\n}', function(err) {
+          if(err) {
+              console.log(err);
+          }
+          console.log("The file was saved!");
+      });
+    } else {
+      console.log("The file exists!");
+    }
+  });
+}
 
 client.on("message", function(message)
 { 
@@ -11,6 +29,11 @@ client.on("message", function(message)
 	const commandBody = message.content.slice(prefix.length);
 	const args = message.content.slice(prefix.length).trim().split(' ');
 	const cmd = args.shift().toLowerCase();
+	
+	var user_id = message.author.id;
+	var user_file = user_id.concat('.json');
+	var users_dir = './player_data/';
+	user_file = users_dir.concat(user_file);
 	
 	if (cmd == "help")
 		message.channel.send('no');
@@ -70,7 +93,72 @@ client.on("message", function(message)
 	}
 	
 	else if (cmd == "gbccwb")
-		message.channel.send('Did you just say Grandma Brownie\'s Chocolate Chunker Wunker Bunkers, now with even bigger chunks of chocolate chunks?');
+	    message.channel.send('Did you just say Grandma Brownie\'s Chocolate Chunker Wunker Bunkers, now with even bigger chunks of chocolate chunks?');
+
+	else if (cmd == "startgame")
+	{
+	    //var user_id = message.author.id;
+	    //var user_file = user_id.concat('.json');
+	    //var users_dir = './player_data/';
+	    //user_file = users_dir.concat(user_file);
+
+	    /*fs.appendFile(user_file, '', (err) => {
+	        if (err) console.log(err);
+	    });*/
+		
+		//createFile(user_file);
+		
+		try {
+			if (fs.existsSync(user_file)) 
+			{
+				console.log("file exists");
+				message.reply("you've already started the game!");
+			}
+			else
+			{
+				console.log("file does not exist");
+				fs.writeFileSync(user_file, "{\n}");
+				
+				var file = fs.readFileSync(user_file);
+				var fp = JSON.parse(file);
+				//if (!fp)
+				//{
+					var json_data = { xp: 0, in_battle: 0, weapon: "", magic : "" };
+					fs.writeFileSync(user_file, JSON.stringify(json_data, null, 2));
+					message.reply("signed you up for the game successfully!");
+				//}
+			}
+		} catch (err) {
+			console.error(err);
+		}
+	}
+	
+	else if (cmd == "battle")
+	{
+		try {
+			if (fs.existsSync(user_file)) 
+			{
+				console.log("file exists, starting battle");
+				
+				var fp = fs.readFileSync(user_file);
+				var json_data = JSON.parse(fp);
+				
+				if (json_data.in_battle == 1)
+					message.reply("you're already in a battle!");
+				else
+				{
+					json_data.in_battle = 1;
+					message.reply("entering a battle!");
+				}
+			}
+			else
+			{
+				message.reply("you have not started the game. No fighting for you! ?startgame");
+			}
+		} catch (err) {
+			console.error(err);
+		}
+	}
 }); 
 
 client.login(config.BOT_TOKEN);
