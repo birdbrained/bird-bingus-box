@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/birdbrained/bird-bingus-box#readme",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "emoji-regex": "^9.2.2"
   }
 }
