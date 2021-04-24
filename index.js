@@ -241,6 +241,17 @@ client.on("message", function(message)
 	
 	else if (cmd == "gbccwb")
 	    message.channel.send('Did you just say Grandma Brownie\'s Chocolate Chunker Wunker Bunkers, now with even bigger chunks of chocolate chunks?');
+	
+	else if (cmd == "art")
+		message.channel.send('https://www.krishnascanvasart.com/');
+
+	else if (cmd == "inspireme")
+	{
+		var wow_such_meaning = ['Some days you\'re the meatball, other days you\'re the hill...'
+		];
+		
+		message.channel.send(wow_such_meaning[Math.floor(Math.random() * wow_such_meaning.length)]);
+	}
 
 	else if (cmd == "startgame")
 	{
