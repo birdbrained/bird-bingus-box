@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const Discord = require("discord.js"); 
 const config = require("./config.json");
 const fs = require('fs');
 const EmojiRegex = require('emoji-regex/RGI_Emoji.js');
@@ -135,7 +135,7 @@ client.on("message", function(message)
 	
 	else if (cmd == "roastme")
 	{
-		var start = ['Go to heck you ', 'Get a job you ', 'You ', 'You\'re a ', 'Hey, you ', 'Eat a cabbage you ', 'Why are you such a ', 'How can you be such a ', 'You remind me of a ', 'Hey hey, you you ', 'You look like a ', 'I bet you\'re a ', 'Get fukt you '];
+		var start = ['Go to heck you ', 'Yo whattup you ', 'Get a job you ', 'You ', 'You\'re a ', 'Hey, you ', 'Eat a cabbage you ', 'Why are you such a ', 'How can you be such a ', 'You remind me of a ', 'Hey hey, you you ', 'You look like a ', 'I bet you\'re a ', 'Get fukt you '];
 		var adjective = ['stanky ', 'pizza-hatin\' ', 'stinky ', 'big word uncomprehendin\' ', 'fart-brained ', 'garlicky ', 'decaying ', 'pasta-hatin\' ', 'slightly overcooked ', 'omegalol ', 'two-bit ', 'dum ', 'aesthetic ', 'nose-pickin\' ', 'popscile-lookin\' ', 'deadpan ', 'shit-nosed ', 'grandma-lookin\' ', 'beeg ', 'stupi ', 'cheesy ', 'small, but deadly ', 'not very cash-money '];
 		var noun = ['wunker-bunker', 'pee-pee-poo-poo', 'BEE', 'guy at Home Depot that cuts the wood', 'plumber', 'corpse', 'poo-poo head', 'bonkizoid', 'chungus', 'parchinko', 'piSS SHIT COCK FUCKER', 'loaf of bread', 'monke', 'omega dorkizorko', 'raisin', 'box of cereal', 'slimer', 'calzone', 'arfarfinarf', 'idjit', 'tree-face', 'utter futter nutter']; 
 
@@ -214,7 +214,10 @@ client.on("message", function(message)
 			'https://i.imgur.com/CrLlkRm.jpg',
 			'https://i.pinimg.com/474x/9a/c0/94/9ac09430d8dda6bb56472d9b76eb30a9.jpg',
 			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJTKy5FCOdOQAz75gC0SqKHxywM6oeE0I_7w&usqp=CAU',
-			'https://static.parade.com/wp-content/uploads/2020/11/hotcheetomacncheese-1.jpg'
+			'https://static.parade.com/wp-content/uploads/2020/11/hotcheetomacncheese-1.jpg',
+			'https://media.theweekendedition.com.au/wp-content/uploads/2017/04/TWE-Spaghetti-Doughnuts.png',
+			'https://i.ytimg.com/vi/xGwyrDpyeX0/maxresdefault.jpg',
+			'https://steamuserimages-a.akamaihd.net/ugc/35246483628943595/C82D89BD8852495F4BCBB34A4357F5B93E195408/'
 			];
 			
 		if (opt_arg)
@@ -243,17 +246,6 @@ client.on("message", function(message)
 
 	else if (cmd == "startgame")
 	{
-	    //var user_id = message.author.id;
-	    //var user_file = user_id.concat('.json');
-	    //var users_dir = './player_data/';
-	    //user_file = users_dir.concat(user_file);
-
-	    //fs.appendFile(user_file, '', (err) => {
-	    //    if (err) console.log(err);
-	    //});
-		
-		//createFile(user_file);
-		
 		const player_name = message.content.substring(message.content.indexOf(' ') + 1);
 		if (!player_name)
 		{
