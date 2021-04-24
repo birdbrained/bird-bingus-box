@@ -214,7 +214,8 @@ client.on("message", function(message)
 			'https://i.imgur.com/CrLlkRm.jpg',
 			'https://i.pinimg.com/474x/9a/c0/94/9ac09430d8dda6bb56472d9b76eb30a9.jpg',
 			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJTKy5FCOdOQAz75gC0SqKHxywM6oeE0I_7w&usqp=CAU',
-			'https://static.parade.com/wp-content/uploads/2020/11/hotcheetomacncheese-1.jpg'
+			'https://static.parade.com/wp-content/uploads/2020/11/hotcheetomacncheese-1.jpg',
+			'https://eatcleanbro.com/media/catalog/product/cache/f559de9a6341bd6e3649acbbe5874b37/c/h/chicken_parm_639.jpg'
 			];
 			
 		if (opt_arg)
