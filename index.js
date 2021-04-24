@@ -217,7 +217,7 @@ client.on("message", function(message)
 			'https://static.parade.com/wp-content/uploads/2020/11/hotcheetomacncheese-1.jpg',
 			'https://media.theweekendedition.com.au/wp-content/uploads/2017/04/TWE-Spaghetti-Doughnuts.png',
 			'https://i.ytimg.com/vi/xGwyrDpyeX0/maxresdefault.jpg',
-			'https://steamuserimages-a.akamaihd.net/ugc/35246483628943595/C82D89BD8852495F4BCBB34A4357F5B93E195408/'
+			'https://steamuserimages-a.akamaihd.net/ugc/35246483628943595/C82D89BD8852495F4BCBB34A4357F5B93E195408/',
 			'https://eatcleanbro.com/media/catalog/product/cache/f559de9a6341bd6e3649acbbe5874b37/c/h/chicken_parm_639.jpg'
 			];
 			
