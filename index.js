@@ -112,7 +112,9 @@ client.on("message", function(message)
 	else
 	{
 		if (og_msg) message.channel.send(og_msg);
-	}*/
+	}
+	
+	return;*/
 	
 	if (!message.content.startsWith(prefix)) return;
 	
@@ -135,9 +137,9 @@ client.on("message", function(message)
 	
 	else if (cmd == "roastme")
 	{
-		var start = ['Go to heck you ', 'Yo whattup you ', 'Get a job you ', 'You ', 'You\'re a ', 'Hey, you ', 'Eat a cabbage you ', 'Why are you such a ', 'How can you be such a ', 'You remind me of a ', 'Hey hey, you you ', 'You look like a ', 'I bet you\'re a ', 'Get fukt you '];
-		var adjective = ['stanky ', 'pizza-hatin\' ', 'stinky ', 'big word uncomprehendin\' ', 'fart-brained ', 'garlicky ', 'decaying ', 'pasta-hatin\' ', 'slightly overcooked ', 'omegalol ', 'two-bit ', 'dum ', 'aesthetic ', 'nose-pickin\' ', 'popscile-lookin\' ', 'deadpan ', 'shit-nosed ', 'grandma-lookin\' ', 'beeg ', 'stupi ', 'cheesy ', 'small, but deadly ', 'not very cash-money '];
-		var noun = ['wunker-bunker', 'pee-pee-poo-poo', 'BEE', 'guy at Home Depot that cuts the wood', 'plumber', 'corpse', 'poo-poo head', 'bonkizoid', 'chungus', 'parchinko', 'piSS SHIT COCK FUCKER', 'loaf of bread', 'monke', 'omega dorkizorko', 'raisin', 'box of cereal', 'slimer', 'calzone', 'arfarfinarf', 'idjit', 'tree-face', 'utter futter nutter']; 
+		var start = ['Go to heck you ', 'blergh you ', 'j00 ', 'HEYYYYYYYYYYYYYYYYYYYYYYY u ', 'Whazzup ya ', 'Can you help me find.... oh no wait, I just found you, a ', 'Yo whattup you ', 'Get a job you ', 'You ', 'You\'re a ', 'Hey, you ', 'Eat a cabbage you ', 'Why are you such a ', 'How can you be such a ', 'You remind me of a ', 'Hey hey, you you ', 'You look like a ', 'I bet you\'re a ', 'Get fukt you '];
+		var adjective = ['stanky ', 'chaotic', 'wack ', 'old-age new-age ', 'emo ', 'pasta hatin\' ', 'pizza-hatin\' ', 'stinky ', 'big word uncomprehendin\' ', 'fart-brained ', 'garlicky ', 'decaying ', 'pasta-hatin\' ', 'slightly overcooked ', 'omegalol ', 'two-bit ', 'dum ', 'aesthetic ', 'nose-pickin\' ', 'popscile-lookin\' ', 'deadpan ', 'shit-nosed ', 'grandma-lookin\' ', 'beeg ', 'stupi ', 'cheesy ', 'small, but deadly ', 'not very cash-money '];
+		var noun = ['wunker-bunker', 'janitor', 'agent of chaos', 'jester', 'pasta', 'dood', 'snek', 'pop-tart', 'pizza', 'pee-pee-poo-poo', 'BEE', 'guy at Home Depot that cuts the wood', 'plumber', 'corpse', 'poo-poo head', 'bonkizoid', 'chungus', 'parchinko', '[CENSORED]', 'dead guy', 'corpse', 'pooter', 'snooter', 'loaf of bread', 'monke', 'omega dorkizorko', 'raisin', 'box of cereal', 'slimer', 'calzone', 'arfarfanarf', 'idjit', 'tree-face', 'utter futter nutter']; 
 
 		var s1 = start[Math.floor(Math.random() * start.length)];
 		var s2 = adjective[Math.floor(Math.random() * adjective.length)];
@@ -218,18 +220,29 @@ client.on("message", function(message)
 			'https://media.theweekendedition.com.au/wp-content/uploads/2017/04/TWE-Spaghetti-Doughnuts.png',
 			'https://i.ytimg.com/vi/xGwyrDpyeX0/maxresdefault.jpg',
 			'https://steamuserimages-a.akamaihd.net/ugc/35246483628943595/C82D89BD8852495F4BCBB34A4357F5B93E195408/',
-			'https://eatcleanbro.com/media/catalog/product/cache/f559de9a6341bd6e3649acbbe5874b37/c/h/chicken_parm_639.jpg'
+			'https://eatcleanbro.com/media/catalog/product/cache/f559de9a6341bd6e3649acbbe5874b37/c/h/chicken_parm_639.jpg',
+			'https://imgix.pedestrian.tv/content/uploads/2020/06/26/colonne-pompeii-pasta-site.jpg?ar=16%3A9&auto=format&crop=focal&fit=crop&q=80&w=1200&nrs=40',
+			'https://i.pinimg.com/736x/3e/40/26/3e4026deff7b37fd91ee560cc0a1579b.jpg',
+			'https://64.media.tumblr.com/a31348cd15f88e3e1e025dfc73a0eda4/tumblr_inline_p7mjlwky5I1v1tlts_400.jpg',
+			'https://cdn.substack.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F838cce71-20af-4b64-b5ae-839b7d63ba5a_3504x2336.jpeg',
+			'http://31.media.tumblr.com/2159b38107a8a71f4628c6afd3e9aebd/tumblr_mw8hz6pjJ41rolsjko1_500.jpg',
+			'https://s23209.pcdn.co/wp-content/uploads/2012/07/IMG_4698-1024x682.jpg',
+			'https://previews.123rf.com/images/orangephoto/orangephoto1302/orangephoto130200004/17842846-pasta-spaghetti-and-penne-in-red-shoe-with-heel.jpg',
+			'https://i.redd.it/xm0wietwjvm41.jpg',
+			'https://cdn.discordapp.com/attachments/797704966285426689/846599210798547004/GF2NcjX.png', //delete this
+			'http://31.media.tumblr.com/e4385450de1538b2e46012ea50521508/tumblr_mzoa4mgtRn1ro8dkoo4_r1_250.gif',
+			'https://i.pinimg.com/564x/7d/5a/97/7d5a97621a78ebd39d4fbd72c7a272c8.jpg'
 			];
 			
 		if (opt_arg)
 		{
 			if (!isNumeric(opt_arg))
-				message.reply("that only works with numbers! 0 to ".concat((pasta_arr.length- 1).toString()));
+				message.reply("that only works with numbers! 1 to ".concat((pasta_arr.length).toString()));
 			else
 			{
-				var index = parseInt(opt_arg, 10);
+				var index = (parseInt(opt_arg, 10) - 1);
 				if (index < 0 || index >= pasta_arr.length)
-					message.reply("that number is out of range! 0 to ".concat((pasta_arr.length - 1).toString()));
+					message.reply("that number is out of range! 1 to ".concat((pasta_arr.length).toString()));
 				else if (index == 7)
 					message.channel.send(pasta_arr[Math.floor(Math.random() * pasta_arr.length)]);
 				else
