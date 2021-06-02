@@ -132,7 +132,7 @@ client.on("message", function(message)
 	
 	else if (cmd == "h")
 	{
-		message.channel.send('Available commands:\n\n?battle\n?gbccwb\n?pasta <index, optional>\n?roastme\n?roll\n?startgame\n?teeth\n?toast');
+		message.channel.send('Available commands:\n\n?battle\n?gbccwb\n?pasta <index, optional>\n?bird\n?roastme\n?roll\n?startgame\n?teeth\n?toast');
 	}
 	
 	else if (cmd == "roastme")
@@ -164,6 +164,27 @@ client.on("message", function(message)
 	{
 		//const teeth = client.emojis.find(emoji => emoji.name === "128TEETHx128TEETH");
 		message.channel.send('<:128TEETHx128TEETH:805660411528740864>');
+	}
+	
+	else if (cmd == "bird")
+	{
+		var birbs = ['https://i.gifer.com/origin/8d/8d3dba8c02452c0256d048adbb1fd8ca_w200.gif',
+			'https://cdn.discordapp.com/attachments/836684113897062441/844622269565108275/20210429_210014.jpg',
+			'https://thumbs.gfycat.com/MildPinkHarlequinbug-max-1mb.gif',
+			'https://media.tenor.com/images/795e1a06cabdb7cbfc6cacf3df1bf849/tenor.gif',
+			'https://i.imgur.com/aVf1DIM.gif',
+			'https://78.media.tumblr.com/9a6c746bd2efe54e17917cbef2b36682/tumblr_o185oaUDVe1sjuzlno1_400.gif',
+			'https://katswenski.com/sites/default/files/party-parrot-vibrating-tumblr-size.gif',
+			'https://media.tenor.com/images/204860ecbbf14b06963ab72e675607ed/tenor.gif',
+			'https://i.imgur.com/qI1cpfE.gif',
+			'https://i.gifer.com/NBVg.gif',
+			'https://i.pinimg.com/originals/b8/7a/64/b87a6452619951f0781a227da41c6bc8.gif',
+			'http://1.bp.blogspot.com/-JY119g5pHQQ/U3W0Ea9fg5I/AAAAAAAAR7I/npFAQf7SOEM/s1600/Animated+Birds+at+Animation+Bundle+(361).gif',
+			'https://pa1.narvii.com/6641/2c3a99b231359d7aebd2a273f7e60c7d01afe1b7_hq.gif',
+			'https://64.media.tumblr.com/56138151968087d49b4bc93399345c9f/tumblr_opgu8wFovw1sjuzlno3_250.gifv'
+		];
+		
+		message.channel.send(birbs[Math.floor(Math.random() * birbs.length)]);
 	}
 	
 	else if (cmd == "pasta")
