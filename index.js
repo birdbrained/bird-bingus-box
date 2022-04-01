@@ -1,8 +1,8 @@
-const Discord = require("discord.js"); 
 const config = require("./config.json");
+const Discord = require("discord.js"); 
 const fs = require('fs');
 const EmojiRegex = require('emoji-regex/RGI_Emoji.js');
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 const prefix = "?";
 
 //enum PlayerState
@@ -29,9 +29,9 @@ function createFile(filename)
 }
 
 function isNumeric(str) {
-  if (typeof str != "string") return false // we only process strings!  
+  if (typeof str != "string") return false; // we only process strings!  
   return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
-         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+         !isNaN(parseFloat(str)); // ...and ensure strings of whitespace fail
 }
 
 function formatPlayerHpBar(json_data)
@@ -76,6 +76,36 @@ function formatPlayerMpBar(json_data)
 	return bar;
 }
 
+function count_substring(str, search)
+{
+	var count = 0;
+	var i = 0;
+	
+	while (true)
+	{
+		const r = str.indexOf(search, i);
+		if (r != -1)
+			[count, i] = [count + 1, r + 1];
+		else
+			return count;
+	}
+}
+
+function zest_check(str)
+{
+	if (typeof str != "string") return false; // we only process strings!  
+	var zest_count = count_substring(str.toLowerCase(), 'zest') * 4;
+	var zest_percent = 0.2;
+	var zestness = zest_count / str.length;
+	
+	//message.reply("zest count is " + zest_count.toString() + ", zestness is " + zestness.toString());
+	
+	if (zestness < zest_percent)
+		return false;
+	else
+		return true;
+}
+
 client.on("message", function(message)
 { 
 	/*if (message.author.id == "811415479855611904")
@@ -115,6 +145,21 @@ client.on("message", function(message)
 	}
 	
 	return;*/
+	
+	// April Fools' 2022
+	if (zest_check(message.content) == true)
+	{
+		message.channel.send("zesty :)");
+	}
+	else
+	{
+		message.delete().catch(console.error);
+		message.reply("your unzesty msg isn't zesty enough!");
+	}
+	return;
+	// End April Fools' 2022
+	
+	
 	
 	if (!message.content.startsWith(prefix)) return;
 	
@@ -397,4 +442,4 @@ client.on("message", function(message)
 	}
 }); 
 
-client.login(config.BOT_TOKEN);
+client.login(config.token);
